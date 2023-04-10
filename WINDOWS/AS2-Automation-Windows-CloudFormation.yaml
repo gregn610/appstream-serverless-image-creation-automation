@@ -569,8 +569,8 @@ Resources:
           Default_Role : !GetAtt 'ImageBuilderIAMRole.Arn'
           Default_SG : !Ref ImageBuilderSecurityGroup
           Default_Subnet : !Ref AS2VPCSubnet1
-          Default_S3_Bucket: !Ref SourceS3Bucket
           Default_Type : !Ref AS2DefaultInstanceType
+          Default_S3_Bucket: !Ref SourceS3Bucket
       Runtime: python3.9
       Role: !GetAtt 'LambdaFunctionIAMRole.Arn'
       Timeout: 30
@@ -672,7 +672,7 @@ Resources:
       CodeUri:
         Bucket:
           Ref: SourceS3Bucket
-        S3Key: FN04_AS2_Windows_Automation_Image_Notification.zip
+        Key: !Ref FN04S3Key
       Environment:
         Variables:
           NotificationARN: 
@@ -968,8 +968,6 @@ Outputs:
     Value: !Ref ImageBuilderSecurityGroupIngressRule1
   ImageBuilderSecurityGroupIngressRule2:
     Value: !Ref ImageBuilderSecurityGroupIngressRule2
-  LambdaFunction01CreateBuilder:
-    Value: !Ref LambdaFunction01CreateBuilder
   LambdaFunctionIAMPolicy:
     Value: !Ref LambdaFunctionIAMPolicy
   LambdaFunctionIAMRole:

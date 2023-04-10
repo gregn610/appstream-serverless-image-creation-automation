@@ -839,8 +839,6 @@ Outputs:
     Value: !Ref ImageBuilderSecurityGroup
   ImageBuilderSecurityGroupIngressRule1:
     Value: !Ref ImageBuilderSecurityGroupIngressRule1
-  LambdaFunction01CreateBuilder:
-    Value: !Ref LambdaFunction01CreateBuilder
   LambdaFunctionIAMPolicy:
     Value: !Ref LambdaFunctionIAMPolicy
   LambdaFunctionIAMRole:
